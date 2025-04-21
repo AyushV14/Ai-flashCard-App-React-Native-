@@ -25,9 +25,10 @@ Welcome to **AI Flashcard Generator** – an intuitive mobile app that helps stu
 
 ## 🖼️ Screenshots
 
+
 <div align="center">
   <img src="https://github.com/user-attachments/assets/022e56cf-fab8-4923-aaca-1e1a548176b2" alt="Get Started" width="30%" style="margin-right: 10px;" />
-  <img src="https://github.com/user-attachments/assets/9a77b3dc-76c9-401a-b8b5-59c0daabeeb9" alt="Sign In" width="30%" style="margin-right: 10px;" />
+  <img src="https://github.com/user-attachments/assets/e7ac24f3-763a-4859-a7e5-6dcea48eb482" alt="Sign In" width="30%" style="margin-right: 10px;" />
   <img src="https://github.com/user-attachments/assets/5e0ced89-66f6-4e91-9c17-555fddc2851b" alt="Sign Up" width="30%" />
 </div>
 
