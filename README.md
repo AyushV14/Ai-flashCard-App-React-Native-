@@ -1,50 +1,61 @@
-# Welcome to your Expo app 👋
+# 📚 AI Flashcard Generator
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Welcome to **AI Flashcard Generator** – an intuitive mobile app that helps students simplify their studies by generating flashcards automatically from text and images. Whether you're revising a lecture, summarizing notes, or prepping for an exam, this app streamlines your learning process with minimal effort.
 
-## Get started
+---
 
-1. Install dependencies
+## ✨ Features
 
-   ```bash
-   npm install
-   ```
+- 🧠 Generate flashcards from text or scanned images
+- 🔍 Extract handwritten or printed text using OCR
+- 📦 Securely save and manage your flashcards in the cloud
+- 🔐 User authentication via email and password
+- 📱 Beautiful and clean user interface
 
-2. Start the app
+---
 
-   ```bash
-    npx expo start
-   ```
+## 🧭 App Flow
 
-In the output, you'll find options to open the app in a
+1. Start on the **Get Started** screen with smooth navigation
+2. Sign in or register with your email
+3. Access flashcard generation features after authentication
+4. Upload content and convert it to flashcards automatically
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 🖼️ Screenshots
 
-## Get a fresh project
+| Get Started | Sign In | Sign Up |
+|-------------|---------|---------|
+| ![Get Started](![WhatsApp Image 2025-04-22 at 03 15 31_05658d37](https://github.com/user-attachments/assets/022e56cf-fab8-4923-aaca-1e1a548176b2)
+) | ![Sign In](![WhatsApp Image 2025-04-22 at 03 15 31_a986d8e4](https://github.com/user-attachments/assets/9a77b3dc-76c9-401a-b8b5-59c0daabeeb9)
+) | ![Sign Up](![WhatsApp Image 2025-04-22 at 03 15 31_2f3f695f](https://github.com/user-attachments/assets/5e0ced89-66f6-4e91-9c17-555fddc2851b)
+) |
 
-When you're ready, run:
+---
 
-```bash
-npm run reset-project
-```
+## 🔧 Backend & Processing
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+- 🔐 **Authentication**: Firebase (Email & Password)
+- ☁️ **Data Storage**: Firebase Firestore
+- 🧠 **OCR**: Google Cloud Vision API (for image text extraction)
 
-## Learn more
+---
 
-To learn more about developing your project with Expo, look at the following resources:
+## 📱 Status
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+The app is currently in development. The authentication flow and UI are in place. Backend logic for flashcard generation and image processing is in progress. Stay tuned for the first release! 🚀
 
-## Join the community
+---
 
-Join our community of developers creating universal apps.
+## 👨‍💻 Developed By
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+**Ayush Vikharankar**
+
+Feel free to explore, suggest, or contribute to this project.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
