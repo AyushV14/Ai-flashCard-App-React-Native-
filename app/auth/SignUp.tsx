@@ -1,12 +1,26 @@
+// SignUp.tsx
 import { StyleSheet, Text, View, TouchableOpacity, Pressable } from 'react-native';
-import React from 'react';
+import React, { useState } from 'react';
 import LottieView from 'lottie-react-native';
 import CustomInput from '@/components/CustomInput';
 import CustomButton from '@/components/CustomButton';
 import { useRouter } from 'expo-router';
+import { signUp } from '@/services/AuthService';
 
 const SignUp = () => {
   const router = useRouter();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const onSignUp = async () => {
+    try {
+      await signUp(email, password, name);
+      router.replace('/(tabs)/home');
+    } catch (error) {
+      console.log('Sign up error in component:', error); 
+    }
+  };
 
   return (
     <View style={styles.container}>
@@ -34,16 +48,16 @@ const SignUp = () => {
       </Text>
       <View style={styles.content}>
         <Text style={styles.inputLabel}>Full name</Text>
-        <CustomInput placeholder="Your full name" />
+        <CustomInput placeholder="Your full name" onChangeText={setName} />
         <Text style={styles.inputLabel}>Email</Text>
-        <CustomInput placeholder="Your email" />
+        <CustomInput placeholder="Your email" onChangeText={setEmail} />
         <Text style={styles.inputLabel}>Password</Text>
-        <CustomInput placeholder="Password" secureTextEntry={true} showPasswordToggle={true} />
+        <CustomInput placeholder="Password" secureTextEntry={true} showPasswordToggle={true} onChangeText={setPassword} />
         <View style={styles.submitContent}>
-          <CustomButton title="Sign up" onPress={() => console.log("Sign up")} width={300} />
+          <CustomButton title="Sign up" onPress={onSignUp} width={300} />
           <Text style={styles.registerText}>
             Already have an account?{' '}
-            <Pressable onPress={() => router.replace("/auth/Signin")}>
+            <Pressable onPress={() => router.replace('/auth/Signin')}>
               <Text style={styles.registerLink}>Sign in</Text>
             </Pressable>
           </Text>
@@ -125,4 +139,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SignUp
+export default SignUp;

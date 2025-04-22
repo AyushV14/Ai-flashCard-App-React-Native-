@@ -4,10 +4,11 @@ import React, { useState } from 'react';
 interface InputProps {
   placeholder: string;
   secureTextEntry?: boolean;
-  showPasswordToggle?: boolean; // New prop to enable/disable toggle
+  showPasswordToggle?: boolean;
+  onChangeText?: (text: string) => void; // Added onChangeText prop
 }
 
-const CustomInput = ({ placeholder, secureTextEntry = false, showPasswordToggle = false }: InputProps) => {
+const CustomInput = ({ placeholder, secureTextEntry = false, showPasswordToggle = false, onChangeText }: InputProps) => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(secureTextEntry);
 
   return (
@@ -17,6 +18,7 @@ const CustomInput = ({ placeholder, secureTextEntry = false, showPasswordToggle 
         placeholder={placeholder}
         secureTextEntry={isPasswordVisible}
         placeholderTextColor="#888"
+        onChangeText={onChangeText} // Pass the onChangeText prop to TextInput
       />
       {showPasswordToggle && (
         <TouchableOpacity

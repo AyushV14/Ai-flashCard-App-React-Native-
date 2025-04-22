@@ -1,12 +1,25 @@
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import React from 'react';
+// Signin.tsx
+import { StyleSheet, Text, View, TouchableOpacity, Alert } from 'react-native';
+import React, { useState } from 'react';
 import LottieView from 'lottie-react-native';
 import CustomInput from '@/components/CustomInput';
 import CustomButton from '@/components/CustomButton';
 import { useRouter } from 'expo-router';
+import { signIn } from '@/services/AuthService';
 
 const Signin = () => {
   const router = useRouter();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const onSignIn = async () => {
+    try {
+      await signIn(email, password);
+      router.replace('/(tabs)/home');
+    } catch (error) {
+      // Error is handled in signIn, so no additional handling needed here
+    }
+  };
 
   return (
     <View style={styles.container}>
@@ -33,14 +46,17 @@ const Signin = () => {
         You've been missed!
       </Text>
       <View style={styles.content}>
+        {/* Email */}
         <Text style={styles.inputLabel}>Email</Text>
-        <CustomInput placeholder="Your email" />
+        <CustomInput placeholder="Your email" onChangeText={setEmail} />
+        {/* Password */}
         <Text style={styles.inputLabel}>Password</Text>
-        <CustomInput placeholder="Password" secureTextEntry={true} showPasswordToggle={true} />
+        <CustomInput placeholder="Password" secureTextEntry={true} showPasswordToggle={true} onChangeText={setPassword} />
+
         <View style={styles.submitContent}>
-          <CustomButton title="Sign in" onPress={() => console.log("Sign in")} width={300} />
+          <CustomButton title="Sign in" onPress={onSignIn} width={300} />
           <Text style={styles.registerText}>
-            Don't have an account? <TouchableOpacity onPress={() => router.replace("/auth/SignUp")}><Text style={styles.registerLink}>Register</Text></TouchableOpacity>
+            Don't have an account? <TouchableOpacity onPress={() => router.replace('/auth/SignUp')}><Text style={styles.registerLink}>Register</Text></TouchableOpacity>
           </Text>
         </View>
       </View>
@@ -120,4 +136,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Signin
+export default Signin;

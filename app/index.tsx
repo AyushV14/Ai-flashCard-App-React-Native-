@@ -45,13 +45,15 @@ export default function Index() {
           text.
         </Text>
       </View>
+      <View style={styles.bottomContent}>
       <LottieView
         source={require("@/assets/animations/books.json")}
         autoPlay
         loop
         style={{ width: 300, height: 350 }}
       />
-      <CustomButton title="Get Started" onPress={() => router.replace("/auth/Signin")} width={290} />
+      <CustomButton title="Get Started" onPress={() => router.replace("/auth/SignUp")} width={290} />
+      </View>
     </View>
   );
 }
@@ -102,4 +104,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     paddingHorizontal: 0,
   },
+  bottomContent:{
+    right:8,
+    bottom:10,
+  }
 });
